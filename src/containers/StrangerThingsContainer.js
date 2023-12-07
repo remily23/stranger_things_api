@@ -15,15 +15,11 @@ const StrangerThingsContainer = () => {
         setRandomQuotes(data[0]);
     };
 
-    useEffect(()=>{
-        fetchQuotes();
-    },[]);
-
     return (
         <>
             <Home/>
             <LandingPage/>
-            <RandomQuotes/>
+            <RandomQuotes fetchQuotes={fetchQuotes}/>
             <History/>
         </>
      );
