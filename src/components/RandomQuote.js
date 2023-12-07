@@ -10,13 +10,13 @@ const RandomQuote = ({ randomQuote }) => {
                     <p>{randomQuote.author} once said...</p>
                 </div>
                 <div>
-                    <p>{randomQuote.quote}</p>
+                    <p>"{randomQuote.quote}"</p>
                 </div>
             </section>)
     }
 
     return (
-        randomQuote ? generateRandomQuote() : <p>Loading quotes</p>
+        Object.keys(randomQuote).length ? generateRandomQuote() : <p>Loading quotes</p>
 
     );
 }
