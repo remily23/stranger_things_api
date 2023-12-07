@@ -14,6 +14,7 @@ const StrangerThingsContainer = () => {
         const response = await fetch("https://strangerthings-quotes.vercel.app/api/quotes");
         const data = await response.json();
         setRandomQuote(data[0]);
+        setListOfQuotes([...listOfQuotes, randomQuote]);
     };
 
     const strangerThingsRoutes = createBrowserRouter([
@@ -26,7 +27,7 @@ const StrangerThingsContainer = () => {
             },
             {
                 path: "/history",
-                element: <History/>
+                element: <History listOfQuotes={listOfQuotes}/>
             }]
         }
     ]);

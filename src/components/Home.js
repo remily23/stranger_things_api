@@ -19,7 +19,7 @@ const Home = ({fetchQuotes}) => {
                 </ul>
             </nav>
             <Outlet />
-            <button onClick={handleFetchButton}>Click Me</button>
+            <button onClick={handleFetchButton}>Generate A Random Quote</button>
         </>
      );
 }
