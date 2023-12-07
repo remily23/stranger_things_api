@@ -7,13 +7,13 @@ import Home from "../components/Home";
 const StrangerThingsContainer = () => {
 
     const [listOfQuotes, setListOfQuotes] = useState([]);
-    const [randomQuotes, setRandomQuotes] = useState(null);
+    const [randomQuote, setRandomQuote] = useState(null);
 
 
     const fetchQuotes = async ()=>{
         const response = await fetch("https://strangerthings-quotes.vercel.app/api/quotes");
         const data = await response.json();
-        setRandomQuotes(data[0]);
+        setRandomQuote(data[0]);
     };
 
     const strangerThingsRoutes = createBrowserRouter([
@@ -22,7 +22,7 @@ const StrangerThingsContainer = () => {
             element: <Home fetchQuotes={fetchQuotes}/>,
             children: [{
                 path: "/random-quote",
-                element: <RandomQuote />
+                element: <RandomQuote randomQuote={randomQuote}/>
             },
             {
                 path: "/history",

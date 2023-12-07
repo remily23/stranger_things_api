@@ -1,9 +1,18 @@
-const RandomQuote = () => {
+const RandomQuote = ({randomQuote}) => {
 
     return ( 
-        <>
-            <p>Random Quotes page</p>
-        </>
+        <section>
+            <div>
+                <p>Your Random Quote:</p>
+            </div>
+            <div>
+                <p>{randomQuote.author} once said...</p>
+            </div>
+            <div>
+                <p>{randomQuote.quote}</p>
+            </div>
+        </section>
+
      );
 }
  
