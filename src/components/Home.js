@@ -1,10 +1,11 @@
 import {Link, Outlet, useNavigate} from "react-router-dom";
 
-const Home = ({fetchQuotes}) => {
+const Home = ({fetchQuotes, clearQuote}) => {
 
     const navigate = useNavigate();
 
     const handleFetchButton = ()=>{
+        clearQuote();
         fetchQuotes();
         navigate("/random-quote");
 

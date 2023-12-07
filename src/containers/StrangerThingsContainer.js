@@ -17,10 +17,14 @@ const StrangerThingsContainer = () => {
     setListOfQuotes([...listOfQuotes, data[0]]);
   };
 
+  const clearQuote = ()=>{
+    setRandomQuote({});
+  };
+
   const strangerThingsRoutes = createBrowserRouter([
     {
       path: "/",
-      element: <Home fetchQuotes={fetchQuotes} />,
+      element: <Home fetchQuotes={fetchQuotes} clearQuote={clearQuote}/>,
       children: [
         {
           path: "/random-quote",
