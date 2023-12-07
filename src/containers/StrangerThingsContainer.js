@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RandomQuote from "../components/RandomQuote";
 import History from "../components/History";
@@ -8,6 +8,7 @@ const StrangerThingsContainer = () => {
 
     const [listOfQuotes, setListOfQuotes] = useState([]);
     const [randomQuotes, setRandomQuotes] = useState(null);
+
 
     const fetchQuotes = async ()=>{
         const response = await fetch("https://strangerthings-quotes.vercel.app/api/quotes");
