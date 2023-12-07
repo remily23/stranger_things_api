@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
-import LandingPage from "../components/LandingPage";
-import RandomQuotes from "../components/RandomQuotes";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RandomQuote from "../components/RandomQuote";
 import History from "../components/History";
 import Home from "../components/Home";
 
@@ -15,12 +15,24 @@ const StrangerThingsContainer = () => {
         setRandomQuotes(data[0]);
     };
 
+    const strangerThingsRoutes = createBrowserRouter([
+        {
+            path: "/",
+            element: <Home fetchQuotes={fetchQuotes}/>,
+            children: [{
+                path: "/random-quote",
+                element: <RandomQuote />
+            },
+            {
+                path: "/history",
+                element: <History/>
+            }]
+        }
+    ]);
+
     return (
         <>
-            <Home/>
-            <LandingPage/>
-            <RandomQuotes fetchQuotes={fetchQuotes}/>
-            <History/>
+            <RouterProvider router={strangerThingsRoutes} />
         </>
      );
 }

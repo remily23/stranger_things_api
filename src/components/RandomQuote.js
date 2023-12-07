@@ -1,4 +1,4 @@
-const RandomQuotes = () => {
+const RandomQuote = () => {
 
     return ( 
         <>
@@ -7,4 +7,4 @@ const RandomQuotes = () => {
      );
 }
  
-export default RandomQuotes;
+export default RandomQuote;
