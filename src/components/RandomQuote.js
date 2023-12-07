@@ -1,8 +1,12 @@
 const RandomQuote = ({ randomQuote }) => {
 
+    const generateClassName = () => {
+        return randomQuote.author.toLowerCase().split(/[\s.]+/).join("-");
+    }
+
     const generateRandomQuote = () => {
         return (
-            <section>
+            <section className={generateClassName()}>
                 <div>
                     <p>Your Random Quote:</p>
                 </div>
