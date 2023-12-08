@@ -1,5 +1,6 @@
 import {Link, Outlet, useNavigate} from "react-router-dom";
 
+
 const Home = ({fetchQuotes, clearQuote}) => {
 
     const navigate = useNavigate();
@@ -14,10 +15,9 @@ const Home = ({fetchQuotes, clearQuote}) => {
     return ( 
         <>
             <nav>
-                <ul>
-                    <li> <Link to="/">Home</Link></li>
-                    <li><Link to="/history">History</Link></li>
-                </ul>
+                <h1>Stranger Things Quotes</h1>
+                <p><Link to="/">Home</Link></p>
+                <p><Link to="/history">History</Link></p>
             </nav>
             <Outlet />
             <button onClick={handleFetchButton}>Generate A Random Quote</button>
